@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>27FC - CLB bóng đá lớp 9.27</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo-area">
+            <div class="logo">27</div>
+
+            <div>
+                <h1>27FC</h1>
+                <span>Football Club · 9.27</span>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <a href="#home">Trang chủ</a>
+            <a href="#achievements">Thành tích</a>
+            <a href="#players">Cầu thủ</a>
+            <a href="#tasks">Nhiệm vụ</a>
+            <a href="#matches">Giải đấu</a>
+        </nav>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    </header>
+
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="#home" onclick="closeMenu()">Trang chủ</a>
+        <a href="#achievements" onclick="closeMenu()">Thành tích</a>
+        <a href="#players" onclick="closeMenu()">Cầu thủ</a>
+        <a href="#tasks" onclick="closeMenu()">Nhiệm vụ</a>
+        <a href="#matches" onclick="closeMenu()">Giải đấu</a>
+
+    </div>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                ⚽ 27FC · CLASS 9.27
+            </div>
+
+            <h2>
+                PLAY TOGETHER.<br>
+                <span>WIN TOGETHER.</span>
+            </h2>
+
+            <p>
+                Website chính thức của CLB bóng đá 27FC —
+                nơi lưu trữ thành tích, đội hình, nhiệm vụ và
+                những trận đấu của lớp 9.27.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#players" class="btn primary">
+                    Xem đội hình
+                </a>
+
+                <a href="#matches" class="btn secondary">
+                    Trận đấu
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-ball">
+            ⚽
+        </div>
+
+    </section>
+
+
+    <!-- QUICK STATS -->
+    <section class="quick-stats">
+
+        <div class="stat-card">
+            <span>👥</span>
+            <strong id="playerCount">0</strong>
+            <small>Cầu thủ</small>
+        </div>
+
+        <div class="stat-card">
+            <span>⚽</span>
+            <strong id="goalCount">0</strong>
+            <small>Bàn thắng tháng</small>
+        </div>
+
+        <div class="stat-card">
+            <span>🏆</span>
+            <strong id="matchCount">0</strong>
+            <small>Trận sắp tới</small>
+        </div>
+
+        <div class="stat-card">
+            <span>⭐</span>
+            <strong>27FC</strong>
+            <small>Since 2026</small>
+        </div>
+
+    </section>
+
+
+    <!-- ACHIEVEMENTS -->
+    <section class="section" id="achievements">
+
+        <div class="section-title">
+
+            <div>
+                <span class="section-label">MONTHLY PERFORMANCE</span>
+                <h2>🏆 Thành tích tháng</h2>
+            </div>
+
+            <span class="month">THÁNG 8 / 2026</span>
+
+        </div>
+
+
+        <div class="achievement-grid">
+
+            <!-- TOP SCORER -->
+            <div class="achievement-card top-scorer">
+
+                <div class="card-header">
+                    <div>
+                        <span class="mini-label">VUA PHÁ LƯỚI</span>
+                        <h3>👑 Top Scorer</h3>
+                    </div>
+
+                    <span class="big-icon">⚽</span>
+                </div>
+
+                <div class="scorer">
+
+                    <div class="player-avatar">10</div>
+
+                    <div class="scorer-info">
+                        <h4>Nguyễn Văn A</h4>
+                        <span>Pivot</span>
+                    </div>
+
+                    <div class="goals">
+                        <strong>8</strong>
+                        <small>BÀN</small>
+                    </div>
+
+                </div>
+
+                <div class="ranking-list">
+
+                    <div>
+                        <span>2</span>
+                        <b>Trần Văn B</b>
+                        <strong>6 ⚽</strong>
+                    </div>
+
+                    <div>
+                        <span>3</span>
+                        <b>Lê Văn C</b>
+                        <strong>4 ⚽</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MONTHLY SCORE -->
+            <div class="achievement-card">
+
+                <div class="card-header">
+                    <div>
+                        <span class="mini-label">ĐIỂM SỐ</span>
+                        <h3>⭐ Player Rating</h3>
+                    </div>
+
+                    <span class="big-icon">⭐</span>
+                </div>
+
+                <div class="rating-player">
+
+                    <div class="player-avatar rating">10</div>
+
+                    <div class="scorer-info">
+                        <h4>Nguyễn Văn A</h4>
+                        <span>Phong độ tháng</span>
+                    </div>
+
+                    <div class="rating">
+                        <strong>9.2</strong>
+                        <small>/ 10</small>
+                    </div>
+
+                </div>
+
+                <div class="rating-bar">
+                    <div style="width: 92%;"></div>
+                </div>
+
+                <div class="rating-details">
+
+                    <span>⚽ Bàn thắng <b>8</b></span>
+                    <span>🎯 Kiến tạo <b>4</b></span>
+                    <span>🏃 Trận đấu <b>5</b></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PLAYERS -->
+    <section class="section players-section" id="players">
+
+        <div class="section-title">
+
+            <div>
+                <span class="section-label">OUR SQUAD</span>
+                <h2>👥 Cầu thủ & đội hình</h2>
+            </div>
+
+        </div>
+
+
+        <!-- POSITION FILTER -->
+        <div class="position-filter">
+
+            <button class="filter active" onclick="filterPlayers('all', this)">
+                Tất cả
+            </button>
+
+            <button class="filter" onclick="filterPlayers('GK', this)">
+                🧤 GK
+            </button>
+
+            <button class="filter" onclick="filterPlayers('Fixo', this)">
+                🛡️ Fixo
+            </button>
+
+            <button class="filter" onclick="filterPlayers('Ala', this)">
+                ⚡ Ala
+            </button>
+
+            <button class="filter" onclick="filterPlayers('Pivot', this)">
+                🎯 Pivot
+            </button>
+
+        </div>
+
+
+        <div class="players-grid" id="playersGrid">
+        </div>
+
+
+        <!-- BEST XI -->
+        <div class="best-eleven">
+
+            <div class="section-title small-title">
+
+                <div>
+                    <span class="section-label">PLAYER OF THE MONTH</span>
+                    <h2>⭐ Đội hình tiêu biểu tháng</h2>
+                </div>
+
+            </div>
+
+
+            <div class="pitch">
+
+                <div class="pitch-line center-line"></div>
+                <div class="pitch-circle"></div>
+
+
+                <div class="pitch-player goalkeeper">
+                    <div class="pitch-avatar">01</div>
+                    <b>Minh</b>
+                    <span>GK</span>
+                </div>
+
+
+                <div class="pitch-player fixo">
+                    <div class="pitch-avatar">04</div>
+                    <b>Nam</b>
+                    <span>Fixo</span>
+                </div>
+
+
+                <div class="pitch-player ala-left">
+                    <div class="pitch-avatar">07</div>
+                    <b>Bình</b>
+                    <span>Ala</span>
+                </div>
+
+
+                <div class="pitch-player ala-right">
+                    <div class="pitch-avatar">11</div>
+                    <b>Huy</b>
+                    <span>Ala</span>
+                </div>
+
+
+                <div class="pitch-player pivot">
+                    <div class="pitch-avatar">10</div>
+                    <b>Văn A</b>
+                    <span>Pivot</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TASKS -->
+    <section class="section" id="tasks">
+
+        <div class="section-title">
+
+            <div>
+                <span class="section-label">MONTHLY TRAINING</span>
+                <h2>📚 Nhiệm vụ & bài tập tháng</h2>
+            </div>
+
+        </div>
+
+
+        <div class="tasks-grid">
+
+            <div class="task-card">
+
+                <div class="task-icon">⚽</div>
+
+                <div>
+                    <span class="task-category">KỸ THUẬT</span>
+                    <h3>Kiểm soát bóng</h3>
+                    <p>
+                        Luyện kiểm soát bóng trong không gian hẹp.
+                    </p>
+                </div>
+
+                <span class="task-status">THÁNG 8</span>
+
+            </div>
+
+
+            <div class="task-card">
+
+                <div class="task-icon">🎯</div>
+
+                <div>
+                    <span class="task-category">DỨT ĐIỂM</span>
+                    <h3>50 cú sút</h3>
+                    <p>
+                        Hoàn thành 50 cú sút trong buổi tập.
+                    </p>
+                </div>
+
+                <span class="task-status">THÁNG 8</span>
+
+            </div>
+
+
+            <div class="task-card">
+
+                <div class="task-icon">🏃</div>
+
+                <div>
+                    <span class="task-category">THỂ LỰC</span>
+                    <h3>Speed & Agility</h3>
+                    <p>
+                        Bài tập tốc độ và khả năng đổi hướng.
+                    </p>
+                </div>
+
+                <span class="task-status">THÁNG 8</span>
+
+            </div>
+
+
+            <div class="task-card">
+
+                <div class="task-icon">🧠</div>
+
+                <div>
+                    <span class="task-category">CHIẾN THUẬT</span>
+                    <h3>Futsal Rotation</h3>
+                    <p>
+                        Học cách di chuyển và xoay vòng đội hình sân 5.
+                    </p>
+                </div>
+
+                <span class="task-status">THÁNG 8</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MATCHES -->
+    <section class="section" id="matches">
+
+        <div class="section-title">
+
+            <div>
+                <span class="section-label">UPCOMING MATCHES</span>
+                <h2>🗓️ Giải đấu & trận đấu sắp tới</h2>
+            </div>
+
+        </div>
+
+
+        <div class="matches-grid">
+
+            <div class="match-card">
+
+                <div class="match-top">
+                    <span class="match-status">SẮP DIỄN RA</span>
+                    <span>15/09/2026</span>
+                </div>
+
+                <h3>🏆 Giải bóng đá khối 9</h3>
+
+                <div class="teams">
+
+                    <div>
+                        <div class="team-logo">27</div>
+                        <b>27FC</b>
+                    </div>
+
+                    <strong>VS</strong>
+
+                    <div>
+                        <div class="team-logo opponent">?</div>
+                        <b>Đối thủ</b>
+                    </div>
+
+                </div>
+
+                <div class="match-info">
+                    <span>🕐 16:30</span>
+                    <span>📍 Sân bóng trường</span>
+                </div>
+
+            </div>
+
+
+            <div class="match-card empty-match">
+
+                <div class="empty-icon">⚽</div>
+
+                <h3>Chưa có trận đấu khác</h3>
+
+                <p>
+                    Lịch thi đấu mới sẽ được cập nhật tại đây.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            <div class="logo">27</div>
+
+            <div>
+                <strong>27FC</strong>
+                <span>Football Club · 9.27</span>
+            </div>
+        </div>
+
+        <p>
+            PLAY TOGETHER · WIN TOGETHER
+        </p>
+
+        <small>
+            © 2026 27FC · Class 9.27
+        </small>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
