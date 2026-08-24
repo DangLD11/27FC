@@ -4,91 +4,146 @@
 
 const players = [
     {
-        name: "Nguyễn Văn A",
-        number: 10,
-        position: "Pivot",
-        wanted1: "Pivot",
-        wanted2: "Ala",
-        goals: 8,
-        assists: 4,
-        rating: 9.2
-    },
-
-    {
-        name: "Trần Văn B",
-        number: 7,
-        position: "Ala",
-        wanted1: "Ala",
-        wanted2: "Pivot",
-        goals: 6,
-        assists: 5,
-        rating: 8.8
-    },
-
-    {
-        name: "Lê Văn C",
-        number: 11,
-        position: "Ala",
-        wanted1: "Ala",
-        wanted2: "Fixo",
-        goals: 4,
-        assists: 2,
-        rating: 8.2
-    },
-
-    {
-        name: "Nguyễn Văn D",
-        number: 4,
-        position: "Fixo",
-        wanted1: "Fixo",
-        wanted2: "Ala",
-        goals: 2,
-        assists: 3,
-        rating: 8.5
-    },
-
-    {
-        name: "Trần Văn E",
-        number: 1,
-        position: "GK",
-        wanted1: "GK",
-        wanted2: "Fixo",
+        name: "Nguyễn Minh Đăng",
+        number: "--",
+        position: "Chưa chọn",
+        wanted1: "Chưa chọn",
+        wanted2: "Chưa chọn",
         goals: 0,
-        assists: 1,
-        rating: 8.7
+        assists: 0,
+        rating: 0
     },
 
     {
-        name: "Phạm Văn F",
-        number: 8,
-        position: "Ala",
-        wanted1: "Ala",
-        wanted2: "Pivot",
-        goals: 3,
-        assists: 3,
-        rating: 8.1
+        name: "Nguyễn Gia Bảo",
+        number: "--",
+        position: "Chưa chọn",
+        wanted1: "Chưa chọn",
+        wanted2: "Chưa chọn",
+        goals: 0,
+        assists: 0,
+        rating: 0
     },
 
     {
-        name: "Nguyễn Văn G",
-        number: 5,
-        position: "Fixo",
-        wanted1: "Fixo",
-        wanted2: "Ala",
-        goals: 1,
-        assists: 2,
-        rating: 7.9
+        name: "Lữ Triều Minh",
+        number: "--",
+        position: "Chưa chọn",
+        wanted1: "Chưa chọn",
+        wanted2: "Chưa chọn",
+        goals: 0,
+        assists: 0,
+        rating: 0
     },
 
     {
-        name: "Lê Văn H",
-        number: 9,
-        position: "Pivot",
-        wanted1: "Pivot",
-        wanted2: "Ala",
-        goals: 3,
-        assists: 1,
-        rating: 8.0
+        name: "Phạm Đăng Vương",
+        number: "--",
+        position: "Chưa chọn",
+        wanted1: "Chưa chọn",
+        wanted2: "Chưa chọn",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Phạm Huỳnh Trường Giang",
+        number: "--",
+        position: "Chưa chọn",
+        wanted1: "Chưa chọn",
+        wanted2: "Chưa chọn",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Hoàng Gia Nguyễn",
+        number: "--",
+        position: "Chưa chọn",
+        wanted1: "Chưa chọn",
+        wanted2: "Chưa chọn",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Nguyễn Hải Lân",
+        number: "--",
+        position: "Chưa chọn",
+        wanted1: "Chưa chọn",
+        wanted2: "Chưa chọn",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Nguyễn Trung Kiên",
+        number: "--",
+        position: "Chưa chọn",
+        wanted1: "Chưa chọn",
+        wanted2: "Chưa chọn",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Trần Uy Dũng",
+        number: "--",
+        position: "Chưa chọn",
+        wanted1: "Chưa chọn",
+        wanted2: "Chưa chọn",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Nguyễn Đăng Phong",
+        number: "--",
+        position: "Chưa chọn",
+        wanted1: "Chưa chọn",
+        wanted2: "Chưa chọn",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Nguyễn Đức Toàn",
+        number: "--",
+        position: "Chưa chọn",
+        wanted1: "Chưa chọn",
+        wanted2: "Chưa chọn",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Trần Quang Vinh",
+        number: "--",
+        position: "Chưa chọn",
+        wanted1: "Chưa chọn",
+        wanted2: "Chưa chọn",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Hồ Hữu Khôi Nguyên",
+        number: "--",
+        position: "Chưa chọn",
+        wanted1: "Chưa chọn",
+        wanted2: "Chưa chọn",
+        goals: 0,
+        assists: 0,
+        rating: 0
     }
 ];
 
@@ -111,13 +166,13 @@ function renderPlayers(list) {
 
         card.innerHTML = `
             <div class="player-number">
-                ${String(player.number).padStart(2, "0")}
+                ${player.number}
             </div>
 
             <h3>${player.name}</h3>
 
             <span class="player-position">
-                ${getPositionIcon(player.position)} ${player.position}
+                ⚽ ${player.position}
             </span>
 
             <div class="player-wanted">
