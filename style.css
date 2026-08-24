@@ -20,6 +20,19 @@ body {
     background: #080a0d;
     color: #f5f5f5;
     line-height: 1.6;
+
+    /* 27FC BACKGROUND */
+    background-image:
+        linear-gradient(
+            rgba(8, 10, 13, 0.78),
+            rgba(8, 10, 13, 0.92)
+        ),
+        url("27FC.jpg");
+
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 a {
@@ -48,7 +61,7 @@ button {
     top: 0;
     z-index: 100;
 
-    background: rgba(8, 10, 13, 0.92);
+    background: rgba(8, 10, 13, 0.90);
     backdrop-filter: blur(14px);
 
     border-bottom: 1px solid #1c2025;
@@ -136,7 +149,9 @@ button {
 
     padding: 20px;
 
-    background: #101318;
+    background: rgba(16, 19, 24, 0.97);
+    backdrop-filter: blur(14px);
+
     border-bottom: 1px solid #242a30;
 }
 
@@ -171,16 +186,16 @@ button {
     overflow: hidden;
 
     background:
-        radial-gradient(
-            circle at 80% 30%,
-            #1d2710 0%,
-            transparent 35%
-        ),
         linear-gradient(
-            135deg,
-            #080a0d 0%,
-            #0d1116 100%
-        );
+            90deg,
+            rgba(8, 10, 13, 0.88) 0%,
+            rgba(8, 10, 13, 0.62) 50%,
+            rgba(8, 10, 13, 0.35) 100%
+        ),
+        url("27FC.jpg");
+
+    background-size: cover;
+    background-position: center;
 }
 
 .hero::before {
@@ -194,8 +209,24 @@ button {
     right: -150px;
     bottom: -250px;
 
-    border: 1px solid #252c33;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 50%;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(8, 10, 13, 0.05),
+            rgba(8, 10, 13, 0.55)
+        );
+
+    pointer-events: none;
 }
 
 .hero-content {
@@ -214,7 +245,7 @@ button {
     border: 1px solid #39420f;
     border-radius: 20px;
 
-    background: #12170a;
+    background: rgba(18, 23, 10, 0.85);
     color: #d9ff00;
 
     font-size: 11px;
@@ -230,6 +261,8 @@ button {
 
     font-weight: 800;
     letter-spacing: -2px;
+
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
 }
 
 .hero h2 span {
@@ -241,8 +274,10 @@ button {
 
     margin-top: 28px;
 
-    color: #9198a1;
+    color: #b8bec5;
     font-size: 15px;
+
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 .hero-buttons {
@@ -273,7 +308,9 @@ button {
 }
 
 .btn.secondary {
-    border: 1px solid #343a40;
+    border: 1px solid #555d65;
+    background: rgba(8, 10, 13, 0.45);
+
     color: white;
 }
 
@@ -289,6 +326,9 @@ button {
     transform: rotate(-15deg);
 
     user-select: none;
+
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -318,10 +358,12 @@ button {
 
     padding: 20px;
 
-    background: #101419;
+    background: rgba(16, 20, 25, 0.94);
     border: 1px solid #22282e;
 
     text-align: center;
+
+    backdrop-filter: blur(8px);
 }
 
 .stat-card:first-child {
@@ -405,9 +447,11 @@ button {
 .achievement-card {
     padding: 25px;
 
-    background: #101419;
+    background: rgba(16, 20, 25, 0.94);
     border: 1px solid #22282e;
     border-radius: 14px;
+
+    backdrop-filter: blur(8px);
 }
 
 .card-header {
@@ -445,7 +489,7 @@ button {
     margin-top: 25px;
     padding: 15px;
 
-    background: #171c21;
+    background: rgba(23, 28, 33, 0.92);
     border-radius: 10px;
 }
 
@@ -583,7 +627,7 @@ button {
     border: 1px solid #292f35;
     border-radius: 20px;
 
-    background: #101419;
+    background: rgba(16, 20, 25, 0.94);
     color: #858d96;
 
     cursor: pointer;
@@ -608,12 +652,14 @@ button {
 .player-card {
     padding: 20px;
 
-    background: #101419;
+    background: rgba(16, 20, 25, 0.94);
     border: 1px solid #22282e;
 
     border-radius: 12px;
 
     transition: 0.2s;
+
+    backdrop-filter: blur(8px);
 }
 
 .player-card:hover {
@@ -821,9 +867,11 @@ button {
 
     padding: 18px;
 
-    background: #101419;
+    background: rgba(16, 20, 25, 0.94);
     border: 1px solid #22282e;
     border-radius: 12px;
+
+    backdrop-filter: blur(8px);
 }
 
 .task-icon {
@@ -887,9 +935,11 @@ button {
 .match-card {
     padding: 25px;
 
-    background: #101419;
+    background: rgba(16, 20, 25, 0.94);
     border: 1px solid #22282e;
     border-radius: 14px;
+
+    backdrop-filter: blur(8px);
 }
 
 .match-top {
@@ -1004,7 +1054,7 @@ button {
     margin-top: 25px;
     padding: 18px;
 
-    background: #171c21;
+    background: rgba(23, 28, 33, 0.92);
     border-radius: 10px;
 }
 
@@ -1098,6 +1148,8 @@ footer {
     margin-top: 80px;
     padding: 45px 20px;
 
+    background: rgba(8, 10, 13, 0.88);
+
     border-top: 1px solid #1d2227;
 
     text-align: center;
@@ -1190,6 +1242,11 @@ footer small {
 
 @media (max-width: 650px) {
 
+    body {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
     .header {
         padding: 0 20px;
     }
@@ -1197,6 +1254,8 @@ footer small {
     .hero {
         min-height: 520px;
         padding: 70px 25px;
+
+        background-position: center;
     }
 
     .hero h2 {
