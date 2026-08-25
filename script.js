@@ -3,12 +3,12 @@
 ========================= */
 
 const players = [
+
     {
         name: "Nguyễn Minh Đăng",
-        number: "--",
-        position: "Chưa chọn",
-        wanted1: "Chưa chọn",
-        wanted2: "Chưa chọn",
+        number: 16,
+        position: ["Fixo", "Ala"],
+        image: "Minhdang.jpg",
         goals: 0,
         assists: 0,
         rating: 0
@@ -16,21 +16,9 @@ const players = [
 
     {
         name: "Nguyễn Gia Bảo",
-        number: "--",
-        position: "Chưa chọn",
-        wanted1: "Chưa chọn",
-        wanted2: "Chưa chọn",
-        goals: 0,
-        assists: 0,
-        rating: 0
-    },
-
-    {
-        name: "Lữ Triều Minh",
-        number: "--",
-        position: "Chưa chọn",
-        wanted1: "Chưa chọn",
-        wanted2: "Chưa chọn",
+        number: 20,
+        position: ["Pivot"],
+        image: "Giabao.jpg",
         goals: 0,
         assists: 0,
         rating: 0
@@ -38,76 +26,9 @@ const players = [
 
     {
         name: "Phạm Đăng Vương",
-        number: "--",
-        position: "Chưa chọn",
-        wanted1: "Chưa chọn",
-        wanted2: "Chưa chọn",
-        goals: 0,
-        assists: 0,
-        rating: 0
-    },
-
-    {
-        name: "Phạm Huỳnh Trường Giang",
-        number: "--",
-        position: "Chưa chọn",
-        wanted1: "Chưa chọn",
-        wanted2: "Chưa chọn",
-        goals: 0,
-        assists: 0,
-        rating: 0
-    },
-
-    {
-        name: "Hoàng Gia Nguyễn",
-        number: "--",
-        position: "Chưa chọn",
-        wanted1: "Chưa chọn",
-        wanted2: "Chưa chọn",
-        goals: 0,
-        assists: 0,
-        rating: 0
-    },
-
-    {
-        name: "Nguyễn Hải Lân",
-        number: "--",
-        position: "Chưa chọn",
-        wanted1: "Chưa chọn",
-        wanted2: "Chưa chọn",
-        goals: 0,
-        assists: 0,
-        rating: 0
-    },
-
-    {
-        name: "Nguyễn Trung Kiên",
-        number: "--",
-        position: "Chưa chọn",
-        wanted1: "Chưa chọn",
-        wanted2: "Chưa chọn",
-        goals: 0,
-        assists: 0,
-        rating: 0
-    },
-
-    {
-        name: "Trần Uy Dũng",
-        number: "--",
-        position: "Chưa chọn",
-        wanted1: "Chưa chọn",
-        wanted2: "Chưa chọn",
-        goals: 0,
-        assists: 0,
-        rating: 0
-    },
-
-    {
-        name: "Nguyễn Đăng Phong",
-        number: "--",
-        position: "Chưa chọn",
-        wanted1: "Chưa chọn",
-        wanted2: "Chưa chọn",
+        number: 36,
+        position: ["Pivot", "Ala"],
+        image: "Dangvuong.jpg",
         goals: 0,
         assists: 0,
         rating: 0
@@ -115,21 +36,59 @@ const players = [
 
     {
         name: "Nguyễn Đức Toàn",
-        number: "--",
-        position: "Chưa chọn",
-        wanted1: "Chưa chọn",
-        wanted2: "Chưa chọn",
+        number: 12,
+        position: ["Fixo"],
+        image: "Ductoan.jpg",
         goals: 0,
         assists: 0,
         rating: 0
     },
 
     {
-        name: "Trần Quang Vinh",
-        number: "--",
-        position: "Chưa chọn",
-        wanted1: "Chưa chọn",
-        wanted2: "Chưa chọn",
+        name: "Hoàng Gia Nguyễn",
+        number: 5,
+        position: ["Fixo"],
+        image: "Gianguyen.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Nguyễn Trung Kiên",
+        number: 1,
+        position: ["GK", "Fixo"],
+        image: "Trungkien.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Lữ Triều Minh",
+        number: 7,
+        position: ["Fixo", "Pivot"],
+        image: "Trieuminh.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Nguyễn Bá Khôi",
+        number: 2,
+        position: ["GK", "Fixo"],
+        image: "Bakhoi.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Phạm Huỳnh Trường Giang",
+        number: 67,
+        position: ["Fixo"],
+        image: "Truonggiang.jpg",
         goals: 0,
         assists: 0,
         rating: 0
@@ -137,55 +96,55 @@ const players = [
 
     {
         name: "Hồ Hữu Khôi Nguyên",
-        number: "--",
-        position: "Chưa chọn",
-        wanted1: "Chưa chọn",
-        wanted2: "Chưa chọn",
+        number: 10,
+        position: ["Ala", "Fixo"],
+        image: "Khoinguyen.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Trần Uy Dũng",
+        number: 15,
+        position: ["Pivot", "Fixo"],
+        image: "Uydung.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Nguyễn Hải Lân",
+        number: 17,
+        position: ["Fixo", "Ala"],
+        image: "Hailan.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Nguyễn Đăng Phong",
+        number: 3,
+        position: ["Fixo", "GK"],
+        image: "Dangphong.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
+
+    {
+        name: "Trần Quang Vinh",
+        number: 26,
+        position: ["Pivot", "Fixo"],
+        image: "Quangvinh.jpg",
         goals: 0,
         assists: 0,
         rating: 0
     }
+
 ];
-
-
-/* =========================
-   RENDER PLAYERS
-========================= */
-
-function renderPlayers(list) {
-
-    const container = document.getElementById("playersGrid");
-
-    container.innerHTML = "";
-
-    list.forEach(player => {
-
-        const card = document.createElement("div");
-
-        card.className = "player-card";
-
-        card.innerHTML = `
-            <div class="player-number">
-                ${player.number}
-            </div>
-
-            <h3>${player.name}</h3>
-
-            <span class="player-position">
-                ⚽ ${player.position}
-            </span>
-
-            <div class="player-wanted">
-                Vị trí mong muốn:<br>
-                <b>${player.wanted1}</b>
-                ·
-                <b>${player.wanted2}</b>
-            </div>
-        `;
-
-        container.appendChild(card);
-    });
-}
 
 
 /* =========================
@@ -215,6 +174,59 @@ function getPositionIcon(position) {
 
 
 /* =========================
+   POSITION NAME
+========================= */
+
+function getPositionText(positions) {
+
+    return positions
+        .map(position => {
+            return `${getPositionIcon(position)} ${position}`;
+        })
+        .join(" · ");
+}
+
+
+/* =========================
+   RENDER PLAYERS
+========================= */
+
+function renderPlayers(list) {
+
+    const container = document.getElementById("playersGrid");
+
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    list.forEach(player => {
+
+        const card = document.createElement("div");
+
+        card.className = "player-card";
+
+        card.innerHTML = `
+            <div class="player-number">
+                #${player.number}
+            </div>
+
+            <h3>${player.name}</h3>
+
+            <span class="player-position">
+                ${getPositionText(player.position)}
+            </span>
+
+            <div class="player-wanted">
+                Số áo: <b>#${player.number}</b>
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+
+/* =========================
    FILTER PLAYERS
 ========================= */
 
@@ -228,6 +240,9 @@ function filterPlayers(position, button) {
 
     button.classList.add("active");
 
+
+    /* TẤT CẢ */
+
     if (position === "all") {
 
         renderPlayers(players);
@@ -235,9 +250,15 @@ function filterPlayers(position, button) {
         return;
     }
 
-    const filtered = players.filter(
-        player => player.position === position
-    );
+
+    /* LỌC THEO VỊ TRÍ */
+
+    const filtered = players.filter(player => {
+
+        return player.position.includes(position);
+
+    });
+
 
     renderPlayers(filtered);
 }
@@ -256,14 +277,28 @@ function updateStats() {
         0
     );
 
-    document.getElementById("playerCount").textContent =
-        playerCount;
 
-    document.getElementById("goalCount").textContent =
-        goalCount;
+    const playerCountElement =
+        document.getElementById("playerCount");
 
-    document.getElementById("matchCount").textContent =
-        "1";
+    const goalCountElement =
+        document.getElementById("goalCount");
+
+    const matchCountElement =
+        document.getElementById("matchCount");
+
+
+    if (playerCountElement) {
+        playerCountElement.textContent = playerCount;
+    }
+
+    if (goalCountElement) {
+        goalCountElement.textContent = goalCount;
+    }
+
+    if (matchCountElement) {
+        matchCountElement.textContent = "1";
+    }
 }
 
 
@@ -273,7 +308,10 @@ function updateStats() {
 
 function toggleMenu() {
 
-    const menu = document.getElementById("mobileMenu");
+    const menu =
+        document.getElementById("mobileMenu");
+
+    if (!menu) return;
 
     menu.classList.toggle("show");
 }
@@ -281,7 +319,10 @@ function toggleMenu() {
 
 function closeMenu() {
 
-    const menu = document.getElementById("mobileMenu");
+    const menu =
+        document.getElementById("mobileMenu");
+
+    if (!menu) return;
 
     menu.classList.remove("show");
 }
