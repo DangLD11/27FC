@@ -169,7 +169,9 @@ function getPositionIcon(position) {
 function getPositionText(positions) {
 
     return positions.map(position => {
+
         return getPositionIcon(position) + " " + position;
+
     }).join(" · ");
 }
 
@@ -180,19 +182,24 @@ function getPositionText(positions) {
 
 function renderPlayers(list) {
 
-    const container = document.getElementById("playersGrid");
+    const container =
+        document.getElementById("playersGrid");
 
     if (!container) return;
 
     container.innerHTML = "";
 
-    list.forEach(player => {
+    list.forEach((player, index) => {
 
-        const card = document.createElement("div");
+        const card =
+            document.createElement("div");
 
         card.className = "player-card";
 
+        card.style.cursor = "pointer";
+
         card.innerHTML = `
+
             <div class="player-photo">
 
                 <img
@@ -223,8 +230,395 @@ function renderPlayers(list) {
             </div>
         `;
 
+        /* CLICK CARD */
+
+        card.addEventListener("click", function () {
+
+            openPlayerProfile(player);
+
+        });
+
         container.appendChild(card);
+
     });
+}
+
+
+/* =========================
+   PLAYER PROFILE
+========================= */
+
+function openPlayerProfile(player) {
+
+    /* Nếu popup cũ tồn tại thì xóa */
+
+    const oldPopup =
+        document.getElementById("playerProfilePopup");
+
+    if (oldPopup) {
+        oldPopup.remove();
+    }
+
+
+    /* Tạo popup */
+
+    const popup =
+        document.createElement("div");
+
+    popup.id = "playerProfilePopup";
+
+    popup.style.cssText = `
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 20px;
+
+        background: rgba(0,0,0,0.75);
+
+        backdrop-filter: blur(8px);
+    `;
+
+
+    /* Nội dung popup */
+
+    popup.innerHTML = `
+
+        <div
+            class="player-profile-box"
+            style="
+                position: relative;
+                width: min(420px, 100%);
+                max-height: 90vh;
+                overflow-y: auto;
+
+                background: #101419;
+                border: 1px solid #30363d;
+                border-radius: 18px;
+
+                box-shadow:
+                    0 20px 70px rgba(0,0,0,0.6);
+            "
+        >
+
+            <!-- CLOSE -->
+
+            <button
+                id="closePlayerProfile"
+                style="
+                    position: absolute;
+                    right: 15px;
+                    top: 15px;
+                    z-index: 5;
+
+                    width: 36px;
+                    height: 36px;
+
+                    border: none;
+                    border-radius: 50%;
+
+                    background: rgba(0,0,0,0.65);
+                    color: white;
+
+                    font-size: 20px;
+                    cursor: pointer;
+                "
+            >
+                ×
+            </button>
+
+
+            <!-- IMAGE -->
+
+            <div
+                style="
+                    height: 300px;
+                    position: relative;
+                    overflow: hidden;
+
+                    border-radius: 18px 18px 0 0;
+
+                    background: #171c21;
+                "
+            >
+
+                <img
+                    src="players/${player.image}"
+                    alt="${player.name}"
+                    style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    "
+                    onerror="
+                        this.style.display='none';
+                    "
+                >
+
+                <div
+                    style="
+                        position: absolute;
+                        left: 20px;
+                        bottom: 15px;
+
+                        color: #d9ff00;
+
+                        font-family: 'Barlow Condensed', sans-serif;
+                        font-size: 65px;
+                        font-weight: 800;
+
+                        text-shadow:
+                            0 3px 12px rgba(0,0,0,0.8);
+                    "
+                >
+                    #${player.number}
+                </div>
+
+            </div>
+
+
+            <!-- INFO -->
+
+            <div style="padding: 25px;">
+
+                <span
+                    style="
+                        color: #d9ff00;
+                        font-size: 10px;
+                        font-weight: 800;
+                        letter-spacing: 1.5px;
+                    "
+                >
+                    27FC PLAYER
+                </span>
+
+                <h2
+                    style="
+                        margin-top: 5px;
+
+                        font-family: 'Barlow Condensed', sans-serif;
+                        font-size: 34px;
+                        line-height: 1;
+                    "
+                >
+                    ${player.name}
+                </h2>
+
+
+                <div
+                    style="
+                        margin-top: 15px;
+
+                        display: inline-block;
+
+                        padding: 7px 11px;
+
+                        border-radius: 6px;
+
+                        background: #20262d;
+
+                        color: #ddd;
+
+                        font-size: 11px;
+                        font-weight: 700;
+                    "
+                >
+                    ${getPositionText(player.position)}
+                </div>
+
+
+                <!-- STATS -->
+
+                <div
+                    style="
+                        display: grid;
+                        grid-template-columns:
+                            repeat(3, 1fr);
+
+                        gap: 8px;
+
+                        margin-top: 25px;
+                    "
+                >
+
+                    <div
+                        style="
+                            padding: 15px 8px;
+
+                            text-align: center;
+
+                            background: #171c21;
+
+                            border-radius: 10px;
+                        "
+                    >
+                        <strong
+                            style="
+                                display: block;
+
+                                color: #d9ff00;
+
+                                font-family:
+                                    'Barlow Condensed',
+                                    sans-serif;
+
+                                font-size: 28px;
+                            "
+                        >
+                            ${player.goals}
+                        </strong>
+
+                        <small
+                            style="
+                                color: #777f88;
+                                font-size: 9px;
+                            "
+                        >
+                            BÀN THẮNG
+                        </small>
+                    </div>
+
+
+                    <div
+                        style="
+                            padding: 15px 8px;
+
+                            text-align: center;
+
+                            background: #171c21;
+
+                            border-radius: 10px;
+                        "
+                    >
+                        <strong
+                            style="
+                                display: block;
+
+                                color: #d9ff00;
+
+                                font-family:
+                                    'Barlow Condensed',
+                                    sans-serif;
+
+                                font-size: 28px;
+                            "
+                        >
+                            ${player.assists}
+                        </strong>
+
+                        <small
+                            style="
+                                color: #777f88;
+                                font-size: 9px;
+                            "
+                        >
+                            KIẾN TẠO
+                        </small>
+                    </div>
+
+
+                    <div
+                        style="
+                            padding: 15px 8px;
+
+                            text-align: center;
+
+                            background: #171c21;
+
+                            border-radius: 10px;
+                        "
+                    >
+                        <strong
+                            style="
+                                display: block;
+
+                                color: #d9ff00;
+
+                                font-family:
+                                    'Barlow Condensed',
+                                    sans-serif;
+
+                                font-size: 28px;
+                            "
+                        >
+                            --
+                        </strong>
+
+                        <small
+                            style="
+                                color: #777f88;
+                                font-size: 9px;
+                            "
+                        >
+                            RATING
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+
+
+    document.body.appendChild(popup);
+
+
+    /* =========================
+       CLOSE BUTTON
+    ========================= */
+
+    document
+        .getElementById("closePlayerProfile")
+        .addEventListener("click", function () {
+
+            popup.remove();
+
+        });
+
+
+    /* =========================
+       CLICK OUTSIDE
+    ========================= */
+
+    popup.addEventListener("click", function (event) {
+
+        if (event.target === popup) {
+
+            popup.remove();
+
+        }
+
+    });
+
+
+    /* =========================
+       ESC KEY
+    ========================= */
+
+    document.addEventListener(
+        "keydown",
+        function closeWithEscape(event) {
+
+            if (event.key === "Escape") {
+
+                popup.remove();
+
+                document.removeEventListener(
+                    "keydown",
+                    closeWithEscape
+                );
+
+            }
+
+        }
+    );
+
 }
 
 
@@ -234,22 +628,35 @@ function renderPlayers(list) {
 
 function filterPlayers(position, button) {
 
-    document.querySelectorAll(".filter").forEach(btn => {
-        btn.classList.remove("active");
-    });
+    document
+        .querySelectorAll(".filter")
+        .forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
 
     button.classList.add("active");
 
+
     if (position === "all") {
+
         renderPlayers(players);
+
         return;
+
     }
 
-    const filtered = players.filter(player =>
-        player.position.includes(position)
-    );
+
+    const filtered =
+        players.filter(player =>
+            player.position.includes(position)
+        );
+
 
     renderPlayers(filtered);
+
 }
 
 
@@ -259,12 +666,17 @@ function filterPlayers(position, button) {
 
 function updateStats() {
 
-    const playerCount = players.length;
+    const playerCount =
+        players.length;
 
-    const goalCount = players.reduce(
-        (total, player) => total + player.goals,
-        0
-    );
+
+    const goalCount =
+        players.reduce(
+            (total, player) =>
+                total + player.goals,
+            0
+        );
+
 
     const playerCountElement =
         document.getElementById("playerCount");
@@ -275,17 +687,30 @@ function updateStats() {
     const matchCountElement =
         document.getElementById("matchCount");
 
+
     if (playerCountElement) {
-        playerCountElement.textContent = playerCount;
+
+        playerCountElement.textContent =
+            playerCount;
+
     }
+
 
     if (goalCountElement) {
-        goalCountElement.textContent = goalCount;
+
+        goalCountElement.textContent =
+            goalCount;
+
     }
 
+
     if (matchCountElement) {
-        matchCountElement.textContent = "1";
+
+        matchCountElement.textContent =
+            "1";
+
     }
+
 }
 
 
@@ -299,8 +724,11 @@ function toggleMenu() {
         document.getElementById("mobileMenu");
 
     if (menu) {
+
         menu.classList.toggle("show");
+
     }
+
 }
 
 
@@ -310,8 +738,11 @@ function closeMenu() {
         document.getElementById("mobileMenu");
 
     if (menu) {
+
         menu.classList.remove("show");
+
     }
+
 }
 
 
@@ -319,10 +750,13 @@ function closeMenu() {
    START
 ========================= */
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-    renderPlayers(players);
+        renderPlayers(players);
 
-    updateStats();
+        updateStats();
 
-});
+    }
+);
