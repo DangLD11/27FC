@@ -1,137 +1,328 @@
 /* =========================
-   PLAYER PHOTOS
+   27FC PLAYER DATA
 ========================= */
 
-.player-card {
-    padding: 0;
-    overflow: hidden;
-    position: relative;
-}
+const players = [
 
-.player-photo {
-    height: 190px;
-    position: relative;
-    overflow: hidden;
-    background:
-        linear-gradient(
-            180deg,
-            #20262d 0%,
-            #11151a 100%
-        );
-}
+    {
+        name: "Nguyễn Minh Đăng",
+        number: 16,
+        position: ["Fixo", "Ala"],
+        image: "Minhdang.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
 
-.player-photo img {
-    width: 100%;
-    height: 100%;
+    {
+        name: "Nguyễn Gia Bảo",
+        number: 20,
+        position: ["Pivot"],
+        image: "Giabao.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
 
-    display: block;
+    {
+        name: "Phạm Đăng Vương",
+        number: 36,
+        position: ["Pivot", "Ala"],
+        image: "Dangvuong.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
 
-    object-fit: cover;
-    object-position: center;
+    {
+        name: "Nguyễn Đức Toàn",
+        number: 12,
+        position: ["Fixo"],
+        image: "Ductoan.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
 
-    transition: transform 0.35s ease;
-}
+    {
+        name: "Hoàng Gia Nguyễn",
+        number: 5,
+        position: ["Fixo"],
+        image: "Gianguyen.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
 
-.player-card:hover .player-photo img {
-    transform: scale(1.05);
-}
+    {
+        name: "Nguyễn Trung Kiên",
+        number: 1,
+        position: ["GK", "Fixo"],
+        image: "Trungkien.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
 
-.player-photo::after {
-    content: "";
+    {
+        name: "Lữ Triều Minh",
+        number: 7,
+        position: ["Fixo", "Pivot"],
+        image: "Trieuminh.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
 
-    position: absolute;
-    inset: 0;
+    {
+        name: "Nguyễn Bá Khôi",
+        number: 2,
+        position: ["GK", "Fixo"],
+        image: "Bakhoi.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
 
-    background:
-        linear-gradient(
-            180deg,
-            transparent 45%,
-            rgba(8, 10, 13, 0.85) 100%
-        );
+    {
+        name: "Phạm Huỳnh Trường Giang",
+        number: 67,
+        position: ["Fixo"],
+        image: "Truonggiang.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
 
-    pointer-events: none;
-}
+    {
+        name: "Hồ Hữu Khôi Nguyên",
+        number: 10,
+        position: ["Ala", "Fixo"],
+        image: "Khoinguyen.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
 
-.player-photo-placeholder {
-    position: absolute;
+    {
+        name: "Trần Uy Dũng",
+        number: 15,
+        position: ["Pivot", "Fixo"],
+        image: "Uydung.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
 
-    inset: 0;
+    {
+        name: "Nguyễn Hải Lân",
+        number: 17,
+        position: ["Fixo", "Ala"],
+        image: "Hailan.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
 
-    display: none;
+    {
+        name: "Nguyễn Đăng Phong",
+        number: 3,
+        position: ["Fixo", "GK"],
+        image: "Dangphong.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
+    },
 
-    align-items: center;
-    justify-content: center;
-
-    font-size: 55px;
-
-    opacity: 0.15;
-}
-
-.player-number {
-    position: absolute;
-
-    left: 14px;
-    bottom: 10px;
-
-    z-index: 3;
-
-    color: #d9ff00;
-
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 34px;
-    font-weight: 800;
-
-    text-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.8);
-}
-
-.player-card-info {
-    padding: 16px 18px 18px;
-}
-
-.player-card h3 {
-    margin-top: 0;
-    font-size: 15px;
-    line-height: 1.3;
-}
-
-.player-position {
-    margin-top: 8px;
-}
-
-.player-wanted {
-    margin-top: 12px;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 650px) {
-
-    .player-photo {
-        height: 165px;
+    {
+        name: "Trần Quang Vinh",
+        number: 26,
+        position: ["Pivot", "Fixo"],
+        image: "Quangvinh.jpg",
+        goals: 0,
+        assists: 0,
+        rating: 0
     }
 
-    .player-number {
-        font-size: 29px;
-        left: 11px;
-        bottom: 7px;
-    }
+];
 
-    .player-card-info {
-        padding: 13px;
-    }
 
-    .player-card h3 {
-        font-size: 13px;
-    }
+/* =========================
+   POSITION ICON
+========================= */
 
+function getPositionIcon(position) {
+
+    if (position === "GK") return "🧤";
+    if (position === "Fixo") return "🛡️";
+    if (position === "Ala") return "⚡";
+    if (position === "Pivot") return "🎯";
+
+    return "⚽";
 }
 
-@media (max-width: 400px) {
 
-    .player-photo {
-        height: 210px;
+/* =========================
+   POSITION TEXT
+========================= */
+
+function getPositionText(positions) {
+
+    return positions.map(position => {
+        return getPositionIcon(position) + " " + position;
+    }).join(" · ");
+}
+
+
+/* =========================
+   RENDER PLAYERS
+========================= */
+
+function renderPlayers(list) {
+
+    const container = document.getElementById("playersGrid");
+
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    list.forEach(player => {
+
+        const card = document.createElement("div");
+
+        card.className = "player-card";
+
+        card.innerHTML = `
+            <div class="player-photo">
+
+                <img
+                    src="players/${player.image}"
+                    alt="${player.name}"
+                    onerror="this.style.display='none';"
+                >
+
+                <div class="player-number">
+                    #${player.number}
+                </div>
+
+            </div>
+
+            <div class="player-card-info">
+
+                <h3>${player.name}</h3>
+
+                <span class="player-position">
+                    ${getPositionText(player.position)}
+                </span>
+
+                <div class="player-wanted">
+                    Số áo:
+                    <b>#${player.number}</b>
+                </div>
+
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+
+/* =========================
+   FILTER PLAYERS
+========================= */
+
+function filterPlayers(position, button) {
+
+    document.querySelectorAll(".filter").forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    if (position === "all") {
+        renderPlayers(players);
+        return;
     }
 
+    const filtered = players.filter(player =>
+        player.position.includes(position)
+    );
+
+    renderPlayers(filtered);
 }
+
+
+/* =========================
+   QUICK STATS
+========================= */
+
+function updateStats() {
+
+    const playerCount = players.length;
+
+    const goalCount = players.reduce(
+        (total, player) => total + player.goals,
+        0
+    );
+
+    const playerCountElement =
+        document.getElementById("playerCount");
+
+    const goalCountElement =
+        document.getElementById("goalCount");
+
+    const matchCountElement =
+        document.getElementById("matchCount");
+
+    if (playerCountElement) {
+        playerCountElement.textContent = playerCount;
+    }
+
+    if (goalCountElement) {
+        goalCountElement.textContent = goalCount;
+    }
+
+    if (matchCountElement) {
+        matchCountElement.textContent = "1";
+    }
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu() {
+
+    const menu =
+        document.getElementById("mobileMenu");
+
+    if (menu) {
+        menu.classList.toggle("show");
+    }
+}
+
+
+function closeMenu() {
+
+    const menu =
+        document.getElementById("mobileMenu");
+
+    if (menu) {
+        menu.classList.remove("show");
+    }
+}
+
+
+/* =========================
+   START
+========================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    renderPlayers(players);
+
+    updateStats();
+
+});
