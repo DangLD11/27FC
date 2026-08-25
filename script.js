@@ -11,7 +11,7 @@ const players = [
         image: "Minhdang.jpg",
         goals: 0,
         assists: 0,
-        rating: 0
+        rating: 80
     },
 
     {
@@ -21,7 +21,7 @@ const players = [
         image: "Giabao.jpg",
         goals: 0,
         assists: 0,
-        rating: 0
+        rating: 80
     },
 
     {
@@ -31,7 +31,7 @@ const players = [
         image: "Dangvuong.jpg",
         goals: 0,
         assists: 0,
-        rating: 0
+        rating: 80
     },
 
     {
@@ -41,7 +41,7 @@ const players = [
         image: "Ductoan.jpg",
         goals: 0,
         assists: 0,
-        rating: 0
+        rating: 80
     },
 
     {
@@ -51,7 +51,7 @@ const players = [
         image: "Gianguyen.jpg",
         goals: 0,
         assists: 0,
-        rating: 0
+        rating: 80
     },
 
     {
@@ -61,7 +61,7 @@ const players = [
         image: "Trungkien.jpg",
         goals: 0,
         assists: 0,
-        rating: 0
+        rating: 80
     },
 
     {
@@ -71,7 +71,7 @@ const players = [
         image: "Trieuminh.jpg",
         goals: 0,
         assists: 0,
-        rating: 0
+        rating: 80
     },
 
     {
@@ -81,7 +81,7 @@ const players = [
         image: "Bakhoi.jpg",
         goals: 0,
         assists: 0,
-        rating: 0
+        rating: 80
     },
 
     {
@@ -91,7 +91,7 @@ const players = [
         image: "Truonggiang.jpg",
         goals: 0,
         assists: 0,
-        rating: 0
+        rating: 80
     },
 
     {
@@ -101,7 +101,7 @@ const players = [
         image: "Khoinguyen.jpg",
         goals: 0,
         assists: 0,
-        rating: 0
+        rating: 80
     },
 
     {
@@ -111,7 +111,7 @@ const players = [
         image: "Uydung.jpg",
         goals: 0,
         assists: 0,
-        rating: 0
+        rating: 80
     },
 
     {
@@ -121,7 +121,7 @@ const players = [
         image: "Hailan.jpg",
         goals: 0,
         assists: 0,
-        rating: 0
+        rating: 80
     },
 
     {
@@ -131,7 +131,7 @@ const players = [
         image: "Dangphong.jpg",
         goals: 0,
         assists: 0,
-        rating: 0
+        rating: 80
     },
 
     {
@@ -141,7 +141,7 @@ const players = [
         image: "Quangvinh.jpg",
         goals: 0,
         assists: 0,
-        rating: 0
+        rating: 80
     }
 
 ];
@@ -153,12 +153,23 @@ const players = [
 
 function getPositionIcon(position) {
 
-    if (position === "GK") return "🧤";
-    if (position === "Fixo") return "🛡️";
-    if (position === "Ala") return "⚡";
-    if (position === "Pivot") return "🎯";
+    switch (position) {
 
-    return "⚽";
+        case "GK":
+            return "🧤";
+
+        case "Fixo":
+            return "🛡️";
+
+        case "Ala":
+            return "⚡";
+
+        case "Pivot":
+            return "🎯";
+
+        default:
+            return "⚽";
+    }
 }
 
 
@@ -189,7 +200,7 @@ function renderPlayers(list) {
 
     container.innerHTML = "";
 
-    list.forEach((player, index) => {
+    list.forEach(player => {
 
         const card =
             document.createElement("div");
@@ -230,8 +241,6 @@ function renderPlayers(list) {
             </div>
         `;
 
-        /* CLICK CARD */
-
         card.addEventListener("click", function () {
 
             openPlayerProfile(player);
@@ -250,8 +259,6 @@ function renderPlayers(list) {
 
 function openPlayerProfile(player) {
 
-    /* Nếu popup cũ tồn tại thì xóa */
-
     const oldPopup =
         document.getElementById("playerProfilePopup");
 
@@ -259,8 +266,6 @@ function openPlayerProfile(player) {
         oldPopup.remove();
     }
 
-
-    /* Tạo popup */
 
     const popup =
         document.createElement("div");
@@ -283,8 +288,6 @@ function openPlayerProfile(player) {
         backdrop-filter: blur(8px);
     `;
 
-
-    /* Nội dung popup */
 
     popup.innerHTML = `
 
@@ -332,7 +335,7 @@ function openPlayerProfile(player) {
             </button>
 
 
-            <!-- IMAGE -->
+            <!-- PLAYER IMAGE -->
 
             <div
                 style="
@@ -367,7 +370,10 @@ function openPlayerProfile(player) {
 
                         color: #d9ff00;
 
-                        font-family: 'Barlow Condensed', sans-serif;
+                        font-family:
+                            'Barlow Condensed',
+                            sans-serif;
+
                         font-size: 65px;
                         font-weight: 800;
 
@@ -381,26 +387,32 @@ function openPlayerProfile(player) {
             </div>
 
 
-            <!-- INFO -->
+            <!-- PLAYER INFO -->
 
             <div style="padding: 25px;">
 
                 <span
                     style="
                         color: #d9ff00;
+
                         font-size: 10px;
                         font-weight: 800;
+
                         letter-spacing: 1.5px;
                     "
                 >
                     27FC PLAYER
                 </span>
 
+
                 <h2
                     style="
                         margin-top: 5px;
 
-                        font-family: 'Barlow Condensed', sans-serif;
+                        font-family:
+                            'Barlow Condensed',
+                            sans-serif;
+
                         font-size: 34px;
                         line-height: 1;
                     "
@@ -436,6 +448,7 @@ function openPlayerProfile(player) {
                 <div
                     style="
                         display: grid;
+
                         grid-template-columns:
                             repeat(3, 1fr);
 
@@ -444,6 +457,8 @@ function openPlayerProfile(player) {
                         margin-top: 25px;
                     "
                 >
+
+                    <!-- GOALS -->
 
                     <div
                         style="
@@ -456,6 +471,7 @@ function openPlayerProfile(player) {
                             border-radius: 10px;
                         "
                     >
+
                         <strong
                             style="
                                 display: block;
@@ -480,8 +496,11 @@ function openPlayerProfile(player) {
                         >
                             BÀN THẮNG
                         </small>
+
                     </div>
 
+
+                    <!-- ASSISTS -->
 
                     <div
                         style="
@@ -494,6 +513,7 @@ function openPlayerProfile(player) {
                             border-radius: 10px;
                         "
                     >
+
                         <strong
                             style="
                                 display: block;
@@ -518,8 +538,11 @@ function openPlayerProfile(player) {
                         >
                             KIẾN TẠO
                         </small>
+
                     </div>
 
+
+                    <!-- OVR -->
 
                     <div
                         style="
@@ -532,6 +555,7 @@ function openPlayerProfile(player) {
                             border-radius: 10px;
                         "
                     >
+
                         <strong
                             style="
                                 display: block;
@@ -545,7 +569,7 @@ function openPlayerProfile(player) {
                                 font-size: 28px;
                             "
                         >
-                            --
+                            ${player.rating}
                         </strong>
 
                         <small
@@ -554,8 +578,9 @@ function openPlayerProfile(player) {
                                 font-size: 9px;
                             "
                         >
-                            RATING
+                            OVR
                         </small>
+
                     </div>
 
                 </div>
@@ -575,26 +600,32 @@ function openPlayerProfile(player) {
 
     document
         .getElementById("closePlayerProfile")
-        .addEventListener("click", function () {
+        .addEventListener(
+            "click",
+            function () {
 
-            popup.remove();
+                popup.remove();
 
-        });
+            }
+        );
 
 
     /* =========================
        CLICK OUTSIDE
     ========================= */
 
-    popup.addEventListener("click", function (event) {
+    popup.addEventListener(
+        "click",
+        function (event) {
 
-        if (event.target === popup) {
+            if (event.target === popup) {
 
-            popup.remove();
+                popup.remove();
+
+            }
 
         }
-
-    });
+    );
 
 
     /* =========================
